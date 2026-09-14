@@ -92,6 +92,10 @@ These are future deployment instructions, not authorization to deploy. No Railwa
 
 ## Local checks
 
+The connected transport test is run from `app-back` with `bash scripts/cephalometry/test-transport.sh`. It builds the existing runtime images and creates an isolated Postgres/Redis/MinIO/FastAPI stack with no published ports or development data volumes. A generated, nonclinical ONNX test graph exercises signed-image downloads, EXIF coordinates, persistence, correction, review, PDF and failure/retry behavior. The script removes only its disposable test stack afterward. Authentication identity and notification delivery use test adapters; this is not a login/browser or clinical accuracy test.
+
+See [current model readiness findings](docs/model-readiness.md) for the remaining real-model integration requirements.
+
 ```sh
 docker build -t dentalflow-ceph-ai:test .
 docker build -f Dockerfile.test -t dentalflow-ceph-ai-tests:test .
