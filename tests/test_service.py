@@ -7,8 +7,6 @@ import threading
 from fastapi.testclient import TestClient
 import httpx
 import numpy as np
-import onnx
-from onnx import TensorProto, helper
 from PIL import Image
 from pydantic import ValidationError
 import pytest
@@ -20,7 +18,8 @@ from app.inference import decode_output
 from app.main import create_app
 from app.model import ModelRuntime
 from app.preprocessing import decode_image, preprocess
-from app.schemas import Landmark, LandmarkResponse, ModelManifest
+from app.schemas import Landmark, LandmarkResponse
+from tests.onnx_fixture import export_fixture, synthetic_manifest
 
 AUTH = {"Authorization": "Bearer test-secret"}
 URL = "https://storage.example/xray?X-Amz-Signature=private"
@@ -39,26 +38,11 @@ def settings():
 
 @pytest.fixture
 def manifest():
-    # Synthetic tensor fixture only. Never shipped as a clinical model or prediction fallback.
-    return ModelManifest(name="test-fixture", version="test-v1", sha256="0"*64,
-        source="unit-test", license="test-fixture-only", rights_review="unit-test", landmark_definitions="unit-test",
-        validation_report="not-a-clinical-model", input_name="image", output_name="points", input_width=64,
-        input_height=64, channels=3, resize="letterbox-bilinear-v1", scale="divide-by-255",
-        mean=[0,0,0], std=[1,1,1], pad_value=0, output_adapter="coordinates-xy-confidence-v1",
-        confidence_definition="synthetic test tensor", codes=["S", "N", "A", "B"])
+    return synthetic_manifest()
 
 
 def runtime_fixture(tmp_path, settings, manifest):
-    values = np.array([[[0.2,0.4,0.9], [0.6,0.4,0.9], [0.7,0.6,0.8], [0.6,0.65,0.7]]], dtype=np.float32)
-    graph = helper.make_graph([helper.make_node("Constant", inputs=[], outputs=["points"], value=helper.make_tensor("test_tensor", TensorProto.FLOAT, values.shape, values.flatten()))],
-        "TEST_ONLY_NOT_CLINICAL", [helper.make_tensor_value_info("image", TensorProto.FLOAT, [1,3,64,64])],
-        [helper.make_tensor_value_info("points", TensorProto.FLOAT, [1,4,3])])
-    model = helper.make_model(graph, opset_imports=[helper.make_opsetid("", 13)])
-    model.ir_version = 9
-    path = tmp_path / "test-only.onnx"
-    onnx.save(model, path)
-    manifest.sha256 = hashlib.sha256(path.read_bytes()).hexdigest()
-    (tmp_path / "test-only.onnx.json").write_text(manifest.model_dump_json())
+    path = export_fixture(tmp_path, manifest)
     settings = settings.model_copy(update={"model_path": str(path), "model_name": manifest.name, "model_version": manifest.version})
     runtime = ModelRuntime(settings)
     return settings, runtime
