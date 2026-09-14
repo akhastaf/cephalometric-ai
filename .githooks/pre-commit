@@ -1,0 +1,9 @@
+#!/bin/sh
+set -eu
+branch=$(git symbolic-ref --quiet --short HEAD) || exit 0
+case "$branch" in
+  main|dev)
+    echo "Create a new development branch and open a PR to dev; direct commits to $branch are blocked in this clone." >&2
+    exit 1
+    ;;
+esac
