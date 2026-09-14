@@ -1,0 +1,32 @@
+{
+  "name": "REPLACE-WITH-APPROVED-MODEL",
+  "version": "REPLACE-WITH-IMMUTABLE-VERSION",
+  "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "source": "REPLACE: publisher and exact artifact URL/revision",
+  "license": "REPLACE: exact weights license, not only the code license",
+  "rights_review": "REPLACE: approval record covering commercial use, redistribution and dataset rights",
+  "landmark_definitions": "REPLACE: reviewed mapping to DentalFlow canonical anatomical definitions",
+  "validation_report": "REPLACE: clinical and ONNX parity validation record",
+  "input_name": "image",
+  "output_name": "landmarks",
+  "input_width": 512,
+  "input_height": 512,
+  "channels": 1,
+  "resize": "letterbox-bilinear-v1",
+  "scale": "divide-by-255",
+  "mean": [
+    0.0
+  ],
+  "std": [
+    1.0
+  ],
+  "pad_value": 0,
+  "output_adapter": "coordinates-xy-confidence-v1",
+  "confidence_definition": "REPLACE: model-specific confidence semantics and calibration",
+  "codes": [
+    "S",
+    "N",
+    "A",
+    "B"
+  ]
+}
