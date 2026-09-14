@@ -1,0 +1,8 @@
+FROM dentalflow-ceph-ai:test
+USER root
+COPY requirements-dev.txt .
+RUN pip install --no-cache-dir -r requirements-dev.txt
+COPY tests ./tests
+RUN chown -R ceph:ceph /app
+USER ceph
+CMD ["python", "-m", "pytest", "-q", "tests"]
