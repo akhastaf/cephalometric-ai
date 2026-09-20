@@ -1,0 +1,9 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "pillow": "12.3.0",
+  "numpy": "2.3.5",
+  "audit_script_sha256": "65c51b9c99d680463a2e62fac03ea5496b918718a15e1db2b0698281ea8c5cf4",
+  "task_colab_runtime_started": false,
+  "training_started": false
+}

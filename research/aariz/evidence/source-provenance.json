@@ -1,0 +1,52 @@
+{
+  "checked_at": "2026-09-15",
+  "aariz_commit": "0634b8b4e6783b13fb6383fac694d61123904d3c",
+  "hrnet_commit": "6f69e4676ad8d43d0d61b64b1b9726f0c369e7b1",
+  "pretrained_weights_downloaded": false,
+  "files": [
+    {
+      "file": "figshare.json",
+      "sha256": "1560e0ca0dd03f76e23d59f5bf0b448429bc503c44af803e4edef1713801ecc9",
+      "bytes": 5380
+    },
+    {
+      "file": "aariz-config.py",
+      "sha256": "fc9aa2c4956d3a071a7916e75c775789355681cb79f13c2008155d1f9d1f0ccf",
+      "bytes": 3484
+    },
+    {
+      "file": "aariz-dataset.py",
+      "sha256": "9eaa5ea2ef12253235a303dad198c6ee27221579c6df9724d202eb40e0fbe9bd",
+      "bytes": 3357
+    },
+    {
+      "file": "aariz-LICENSE",
+      "sha256": "915950b252166cb98f3ad4eff03f9b3d58c34a18b4d1d3753aa9f1d1ec197501",
+      "bytes": 1079
+    },
+    {
+      "file": "hrnet-LICENSE",
+      "sha256": "d7b0aeb0a10043c326941ec9399ca9cf24240e17b5fa5eb00b5552d7cacd0e42",
+      "bytes": 1065
+    },
+    {
+      "file": "hrnet-lib_models_pose_hrnet.py",
+      "sha256": "c0f2f8a137836c6e8c489e4a1c46010bfce5308584e13d231565f7f90a2636f8",
+      "bytes": 18140
+    },
+    {
+      "file": "hrnet-experiments_coco_hrnet_w32_256x192_adam_lr1e-3.yaml",
+      "sha256": "887e2df7a490d0d1e4eac1d3ffa6853e6416ff8f6539b67293456a5cfabbd3ff",
+      "bytes": 2166
+    }
+  ],
+  "source_urls": {
+    "aariz-config.py": "https://raw.githubusercontent.com/manwaarkhd/aariz/0634b8b4e6783b13fb6383fac694d61123904d3c/config.py",
+    "aariz-dataset.py": "https://raw.githubusercontent.com/manwaarkhd/aariz/0634b8b4e6783b13fb6383fac694d61123904d3c/dataset.py",
+    "aariz-LICENSE": "https://raw.githubusercontent.com/manwaarkhd/aariz/0634b8b4e6783b13fb6383fac694d61123904d3c/LICENSE",
+    "hrnet-LICENSE": "https://raw.githubusercontent.com/leoxiaobin/deep-high-resolution-net.pytorch/6f69e4676ad8d43d0d61b64b1b9726f0c369e7b1/LICENSE",
+    "hrnet-lib_models_pose_hrnet.py": "https://raw.githubusercontent.com/leoxiaobin/deep-high-resolution-net.pytorch/6f69e4676ad8d43d0d61b64b1b9726f0c369e7b1/lib/models/pose_hrnet.py",
+    "hrnet-experiments_coco_hrnet_w32_256x192_adam_lr1e-3.yaml": "https://raw.githubusercontent.com/leoxiaobin/deep-high-resolution-net.pytorch/6f69e4676ad8d43d0d61b64b1b9726f0c369e7b1/experiments/coco/hrnet/w32_256x192_adam_lr1e-3.yaml",
+    "figshare.json": "https://api.figshare.com/v2/articles/27986417"
+  }
+}

@@ -9,3 +9,10 @@ __pycache__/
 models/*
 !models/.gitkeep
 !models/manifest.example.json
+
+# Research data and training artifacts stay outside Git.
+research/**/runs/
+research/**/prepared*/
+*.pt
+*.pth
+*.zip

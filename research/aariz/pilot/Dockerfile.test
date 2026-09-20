@@ -1,0 +1,7 @@
+FROM python:3.12-slim
+ENV OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1
+WORKDIR /work
+RUN pip install --no-cache-dir torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
+RUN pip install --no-cache-dir numpy==2.2.6 Pillow==11.3.0 pytest==9.0.2 ruff==0.15.6
+COPY research /work/research
+CMD ["python", "-m", "pytest", "-q", "research/aariz/test_review_package.py", "research/aariz/pilot/test_pilot.py"]
