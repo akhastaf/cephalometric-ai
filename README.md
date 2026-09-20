@@ -92,6 +92,8 @@ These are future deployment instructions, not authorization to deploy. No Railwa
 
 ## Local checks
 
+The proposed 29-landmark HRNet-W32 training phase is documented in [the Aariz audit/review package](research/aariz/README.md). It is not a configured clinical model or runnable training pipeline. The audit found exact cross-split duplicate images and a pixel-spacing discrepancy that require review before a pilot; the plan uses Google AI Pro's 200 monthly CCUs. No pilot or full training has started.
+
 The connected transport test is run from `app-back` with `bash scripts/cephalometry/test-transport.sh`. It builds the existing runtime images and creates an isolated Postgres/Redis/MinIO/FastAPI stack with no published ports or development data volumes. A generated, nonclinical ONNX test graph exercises signed-image downloads, EXIF coordinates, persistence, correction, review, PDF and failure/retry behavior. The script removes only its disposable test stack afterward. Authentication identity and notification delivery use test adapters; this is not a login/browser or clinical accuracy test.
 
 See [current model readiness findings](docs/model-readiness.md) for the remaining real-model integration requirements.

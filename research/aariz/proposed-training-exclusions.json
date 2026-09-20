@@ -1,0 +1,285 @@
+{
+  "status": "DRAFT_FOR_REVIEW_NOT_APPLIED",
+  "official_split_unchanged": true,
+  "test_and_validation_unchanged": true,
+  "original_train_count": 700,
+  "proposed_train_exclusions": 18,
+  "proposed_effective_train_count": 682,
+  "validation_count": 150,
+  "test_count": 150,
+  "tie_break_for_train_only_groups": "retain lexicographically smallest anonymous image ID; do not choose by label quality or model score",
+  "near_duplicate_candidates_unresolved": 413,
+  "not_a_patient_identity_deduplication": true,
+  "exclusions": [
+    {
+      "id": "cl5lg05uk01eq074k5kou14gg",
+      "split": "train",
+      "reason": "exact pixel duplicate in validation/test",
+      "group": [
+        {
+          "id": "cl5lg05uf019m074k8q27h7oy",
+          "split": "test"
+        },
+        {
+          "id": "cl5lg05uk01eq074k5kou14gg",
+          "split": "train"
+        }
+      ]
+    },
+    {
+      "id": "cl5lg05uq01km074kcn02bn6n",
+      "split": "train",
+      "reason": "exact pixel duplicate in validation/test",
+      "group": [
+        {
+          "id": "cl5lg05ul01g6074k007y5xhr",
+          "split": "test"
+        },
+        {
+          "id": "cl5lg05uq01km074kcn02bn6n",
+          "split": "train"
+        }
+      ]
+    },
+    {
+      "id": "cl5lg05uk01fi074k69ht356y",
+      "split": "train",
+      "reason": "redundant exact pixel duplicate inside train",
+      "group": [
+        {
+          "id": "cl5lg05ue018y074kdq6yc9cj",
+          "split": "train"
+        },
+        {
+          "id": "cl5lg05uk01fi074k69ht356y",
+          "split": "train"
+        }
+      ]
+    },
+    {
+      "id": "cl5lg05uf01a6074k9wdlgqlf",
+      "split": "train",
+      "reason": "redundant exact pixel duplicate inside train",
+      "group": [
+        {
+          "id": "cl5lg05ue019i074kfgtu5ot7",
+          "split": "train"
+        },
+        {
+          "id": "cl5lg05uf01a6074k9wdlgqlf",
+          "split": "train"
+        }
+      ]
+    },
+    {
+      "id": "cl5lg05um01h2074k1fmo9z46",
+      "split": "train",
+      "reason": "redundant exact pixel duplicate inside train",
+      "group": [
+        {
+          "id": "cl5lg05uf019q074k77b49iib",
+          "split": "train"
+        },
+        {
+          "id": "cl5lg05um01h2074k1fmo9z46",
+          "split": "train"
+        }
+      ]
+    },
+    {
+      "id": "cl5lg05um01gy074kgdtmhjv2",
+      "split": "train",
+      "reason": "redundant exact pixel duplicate inside train",
+      "group": [
+        {
+          "id": "cl5lg05uf01a2074k76uvfowo",
+          "split": "train"
+        },
+        {
+          "id": "cl5lg05um01gy074kgdtmhjv2",
+          "split": "train"
+        }
+      ]
+    },
+    {
+      "id": "cl5lg05uk01ey074k4s9dftjk",
+      "split": "train",
+      "reason": "redundant exact pixel duplicate inside train",
+      "group": [
+        {
+          "id": "cl5lg05uf01aa074k30lz1oq2",
+          "split": "train"
+        },
+        {
+          "id": "cl5lg05uk01ey074k4s9dftjk",
+          "split": "train"
+        }
+      ]
+    },
+    {
+      "id": "cl5lg05uj01d6074k93foas54",
+      "split": "train",
+      "reason": "redundant exact pixel duplicate inside train",
+      "group": [
+        {
+          "id": "cl5lg05ug01au074k511u78le",
+          "split": "train"
+        },
+        {
+          "id": "cl5lg05uj01d6074k93foas54",
+          "split": "train"
+        }
+      ]
+    },
+    {
+      "id": "cl5lg05uh01c2074kaiage5hg",
+      "split": "train",
+      "reason": "redundant exact pixel duplicate inside train",
+      "group": [
+        {
+          "id": "cl5lg05uh01bu074k41u2cc4k",
+          "split": "train"
+        },
+        {
+          "id": "cl5lg05uh01c2074kaiage5hg",
+          "split": "train"
+        }
+      ]
+    },
+    {
+      "id": "cl5lg05un01hy074k7rgke4k2",
+      "split": "train",
+      "reason": "redundant exact pixel duplicate inside train",
+      "group": [
+        {
+          "id": "cl5lg05uj01da074khtmo1ka4",
+          "split": "train"
+        },
+        {
+          "id": "cl5lg05un01hy074k7rgke4k2",
+          "split": "train"
+        }
+      ]
+    },
+    {
+      "id": "cl5lg05uk01f2074k0wkaaelh",
+      "split": "train",
+      "reason": "redundant exact pixel duplicate inside train",
+      "group": [
+        {
+          "id": "cl5lg05uj01dq074kg2o42anm",
+          "split": "train"
+        },
+        {
+          "id": "cl5lg05uk01f2074k0wkaaelh",
+          "split": "train"
+        }
+      ]
+    },
+    {
+      "id": "cl5lg05uk01f6074kddjj0jee",
+      "split": "train",
+      "reason": "redundant exact pixel duplicate inside train",
+      "group": [
+        {
+          "id": "cl5lg05uk01e2074kdog34t38",
+          "split": "train"
+        },
+        {
+          "id": "cl5lg05uk01f6074kddjj0jee",
+          "split": "train"
+        }
+      ]
+    },
+    {
+      "id": "cl5lg05uk01ei074k6cjy5n5s",
+      "split": "train",
+      "reason": "exact pixel duplicate in validation/test",
+      "group": [
+        {
+          "id": "cl5lg05uk01ei074k6cjy5n5s",
+          "split": "train"
+        },
+        {
+          "id": "cl5lg05ug01be074ke6h6g4zi",
+          "split": "valid"
+        }
+      ]
+    },
+    {
+      "id": "cl5lg05uk01eu074k43xm28on",
+      "split": "train",
+      "reason": "exact pixel duplicate in validation/test",
+      "group": [
+        {
+          "id": "cl5lg05uk01eu074k43xm28on",
+          "split": "train"
+        },
+        {
+          "id": "cl5lg05ue0196074k9b619xdr",
+          "split": "valid"
+        }
+      ]
+    },
+    {
+      "id": "cl5lg05uk01fe074kdu5640v5",
+      "split": "train",
+      "reason": "exact pixel duplicate in validation/test",
+      "group": [
+        {
+          "id": "cl5lg05uk01fe074kdu5640v5",
+          "split": "train"
+        },
+        {
+          "id": "cl5lg05ug01ba074k7hvh8wpn",
+          "split": "valid"
+        }
+      ]
+    },
+    {
+      "id": "cl5lg05un01ia074kf2a4ayes",
+      "split": "train",
+      "reason": "redundant exact pixel duplicate inside train",
+      "group": [
+        {
+          "id": "cl5lg05uk01fu074kfuqths55",
+          "split": "train"
+        },
+        {
+          "id": "cl5lg05un01ia074kf2a4ayes",
+          "split": "train"
+        }
+      ]
+    },
+    {
+      "id": "cl5lg05un01ie074k778b5dor",
+      "split": "train",
+      "reason": "redundant exact pixel duplicate inside train",
+      "group": [
+        {
+          "id": "cl5lg05uk01fy074kb2wm3i1e",
+          "split": "train"
+        },
+        {
+          "id": "cl5lg05un01ie074k778b5dor",
+          "split": "train"
+        }
+      ]
+    },
+    {
+      "id": "cl5lg05ul01ge074k302594d5",
+      "split": "train",
+      "reason": "exact pixel duplicate in validation/test",
+      "group": [
+        {
+          "id": "cl5lg05ul01ge074k302594d5",
+          "split": "train"
+        },
+        {
+          "id": "cl5lg05uq01ki074ket8j8p6r",
+          "split": "valid"
+        }
+      ]
+    }
+  ]
+}

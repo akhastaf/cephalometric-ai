@@ -1,0 +1,4 @@
+# Preserve the audited publisher README verbatim, including original whitespace.
+research/aariz/evidence/archive-readme.txt -whitespace
+# Machine-generated audit manifests are available without dominating code review.
+research/aariz/evidence/*.json linguist-generated=true

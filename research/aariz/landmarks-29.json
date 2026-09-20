@@ -1,0 +1,311 @@
+{
+  "schema_version": "aariz29-v1",
+  "status": "PROPOSED_FOR_REVIEW",
+  "source_doi": "10.6084/m9.figshare.27986417.v1",
+  "source_config_commit": "0634b8b4e6783b13fb6383fac694d61123904d3c",
+  "count": 29,
+  "output_index_base": 0,
+  "ordering": "Pinned source config order; match input annotations by source_landmark_id, never array position or paper table row.",
+  "source_coordinates": {
+    "units": "original image pixels",
+    "origin": "top-left; no automatic half-pixel or one-based shift",
+    "normalization": "x/width,y/height",
+    "x_direction": "right",
+    "y_direction": "down",
+    "ground_truth": "float mean of junior and senior coordinates matched by stable ID; no ceil",
+    "source_loader_difference": "Upstream uses ceil(mean) and positional pairing. Compare its rounded target in supplementary evaluation; do not silently reproduce bias."
+  },
+  "clinical_protocol_status": "Definitions are descriptive mappings to Aariz; clinician sign-off remains required, especially Gn/Go/Ar/Po.",
+  "landmarks": [
+    {
+      "output_index": 0,
+      "source_landmark_id": "ckr20ld7v4a4r0za3gqkydid2",
+      "source_symbol": "A",
+      "code": "A",
+      "label": "A-point",
+      "category": "skeletal",
+      "definition": "Deepest anterior maxillary concavity.",
+      "dentalflow_v1_code": "A"
+    },
+    {
+      "output_index": 1,
+      "source_landmark_id": "ckr6rysyb3jyi0y303gbq84ks",
+      "source_symbol": "ANS",
+      "code": "ANS",
+      "label": "Anterior Nasal Spine",
+      "category": "skeletal",
+      "definition": "Anterior tip of the anterior nasal spine.",
+      "dentalflow_v1_code": "ANS"
+    },
+    {
+      "output_index": 2,
+      "source_landmark_id": "ckr6rysyb3jyk0y301dcyhf9q",
+      "source_symbol": "B",
+      "code": "B",
+      "label": "B-point",
+      "category": "skeletal",
+      "definition": "Deepest anterior mandibular symphysis concavity.",
+      "dentalflow_v1_code": "B"
+    },
+    {
+      "output_index": 3,
+      "source_landmark_id": "ckr6rysyc3jym0y307w5s1g4a",
+      "source_symbol": "Me",
+      "code": "Me",
+      "label": "Menton",
+      "category": "skeletal",
+      "definition": "Lowest point of the mandibular symphysis.",
+      "dentalflow_v1_code": "Me"
+    },
+    {
+      "output_index": 4,
+      "source_landmark_id": "ckr6rysyc3jyo0y3083er4fow",
+      "source_symbol": "N",
+      "code": "N",
+      "label": "Nasion",
+      "category": "skeletal",
+      "definition": "Anterior frontonasal suture point.",
+      "dentalflow_v1_code": "N"
+    },
+    {
+      "output_index": 5,
+      "source_landmark_id": "ckr6rysyc3jyq0y306afa3t9a",
+      "source_symbol": "Or",
+      "code": "Or",
+      "label": "Orbitale",
+      "category": "skeletal",
+      "definition": "Lowest point of the inferior orbital rim.",
+      "dentalflow_v1_code": "Or"
+    },
+    {
+      "output_index": 6,
+      "source_landmark_id": "ckr6rysyd3jys0y30gd1rahjp",
+      "source_symbol": "Pog",
+      "code": "Pog",
+      "label": "Pogonion",
+      "category": "skeletal",
+      "definition": "Most anterior bony chin point.",
+      "dentalflow_v1_code": "Pog"
+    },
+    {
+      "output_index": 7,
+      "source_landmark_id": "ckr6rysyd3jyu0y30ah3205y8",
+      "source_symbol": "PNS",
+      "code": "PNS",
+      "label": "Posterior Nasal Spine",
+      "category": "skeletal",
+      "definition": "Tip of the posterior palatal spine.",
+      "dentalflow_v1_code": "PNS"
+    },
+    {
+      "output_index": 8,
+      "source_landmark_id": "ckr6rysyd3jyw0y30hbbkfcb2",
+      "source_symbol": "Pn",
+      "code": "Pn",
+      "label": "Pronasale",
+      "category": "soft_tissue",
+      "definition": "Tip of the external nose.",
+      "dentalflow_v1_code": null
+    },
+    {
+      "output_index": 9,
+      "source_landmark_id": "ckr6rysye3jyy0y30h8n07rrl",
+      "source_symbol": "R",
+      "code": "R",
+      "label": "Ramus",
+      "category": "skeletal",
+      "definition": "Most convex point on the external ramus border.",
+      "dentalflow_v1_code": null
+    },
+    {
+      "output_index": 10,
+      "source_landmark_id": "ckr6rysye3jz00y30fzx36g43",
+      "source_symbol": "S",
+      "code": "S",
+      "label": "Sella",
+      "category": "skeletal",
+      "definition": "Center of the sella turcica cavity.",
+      "dentalflow_v1_code": "S"
+    },
+    {
+      "output_index": 11,
+      "source_landmark_id": "ckr6rysye3jz20y303mmleb3m",
+      "source_symbol": "Ar",
+      "code": "Ar",
+      "label": "Articulare",
+      "category": "skeletal",
+      "definition": "Intersection of zygomatic shadow and posterior ramus border.",
+      "dentalflow_v1_code": null
+    },
+    {
+      "output_index": 12,
+      "source_landmark_id": "ckr6rysye3jz40y309hjl6dp2",
+      "source_symbol": "Co",
+      "code": "Co",
+      "label": "Condylion",
+      "category": "skeletal",
+      "definition": "Most posterosuperior mandibular condyle point.",
+      "dentalflow_v1_code": null
+    },
+    {
+      "output_index": 13,
+      "source_landmark_id": "ckr6rysyf3jz60y30d6ir73i6",
+      "source_symbol": "Gn",
+      "code": "Gn",
+      "label": "Gnathion",
+      "category": "skeletal",
+      "definition": "Anteroinferior symphysis point between Pog and Me; Aariz construction.",
+      "dentalflow_v1_code": "Gn"
+    },
+    {
+      "output_index": 14,
+      "source_landmark_id": "ckr6rysyf3jz80y308ruj39bx",
+      "source_symbol": "Go",
+      "code": "Go",
+      "label": "Gonion",
+      "category": "skeletal",
+      "definition": "Midpoint of the mandibular angle contour; Aariz construction.",
+      "dentalflow_v1_code": "Go"
+    },
+    {
+      "output_index": 15,
+      "source_landmark_id": "ckr6rysyf3jza0y3010od7lu3",
+      "source_symbol": "Po",
+      "code": "Po",
+      "label": "Porion",
+      "category": "skeletal",
+      "definition": "Upper external auditory canal contour midpoint; anatomical porion.",
+      "dentalflow_v1_code": "Po"
+    },
+    {
+      "output_index": 16,
+      "source_landmark_id": "ckr6rysyf3jzc0y30bjsl17p5",
+      "source_symbol": "LPM",
+      "code": "LPM",
+      "label": "Lower 2nd PM Cusp Tip",
+      "category": "dental",
+      "definition": "Buccal cusp tip of lower second premolar.",
+      "dentalflow_v1_code": null
+    },
+    {
+      "output_index": 17,
+      "source_landmark_id": "ckr6rysyf3jze0y308g246gqv",
+      "source_symbol": "LIT",
+      "code": "LIT",
+      "label": "Lower Incisor Tip",
+      "category": "dental",
+      "definition": "Incisal edge of the lower central incisor.",
+      "dentalflow_v1_code": "L1"
+    },
+    {
+      "output_index": 18,
+      "source_landmark_id": "ckr6rysyf3jzg0y3004pzauxj",
+      "source_symbol": "LMT",
+      "code": "LMT",
+      "label": "Lower Molar Cusp Tip",
+      "category": "dental",
+      "definition": "Mesiobuccal cusp tip of lower first molar.",
+      "dentalflow_v1_code": null
+    },
+    {
+      "output_index": 19,
+      "source_landmark_id": "ckr6rysyf3jzi0y303zh895ny",
+      "source_symbol": "UPM",
+      "code": "UPM",
+      "label": "Upper 2nd PM Cusp Tip",
+      "category": "dental",
+      "definition": "Buccal cusp tip of upper second premolar.",
+      "dentalflow_v1_code": null
+    },
+    {
+      "output_index": 20,
+      "source_landmark_id": "ckr6rysyg3jzk0y303unk9msw",
+      "source_symbol": "UIA",
+      "code": "UIA",
+      "label": "Upper Incisor Apex",
+      "category": "dental",
+      "definition": "Root apex of upper central incisor.",
+      "dentalflow_v1_code": null
+    },
+    {
+      "output_index": 21,
+      "source_landmark_id": "ckr6rysyg3jzm0y30e4r55szn",
+      "source_symbol": "UIT",
+      "code": "UIT",
+      "label": "Upper Incisor Tip",
+      "category": "dental",
+      "definition": "Incisal edge of upper central incisor.",
+      "dentalflow_v1_code": "U1"
+    },
+    {
+      "output_index": 22,
+      "source_landmark_id": "ckr6rysyg3jzo0y309pc56jgb",
+      "source_symbol": "UMT",
+      "code": "UMT",
+      "label": "Upper Molar Cusp Tip",
+      "category": "dental",
+      "definition": "Mesiobuccal cusp tip of upper first molar.",
+      "dentalflow_v1_code": null
+    },
+    {
+      "output_index": 23,
+      "source_landmark_id": "ckr6rysyg3jzq0y309625913x",
+      "source_symbol": "LIA",
+      "code": "LIA",
+      "label": "Lower Incisor Apex",
+      "category": "dental",
+      "definition": "Root apex of lower central incisor.",
+      "dentalflow_v1_code": null
+    },
+    {
+      "output_index": 24,
+      "source_landmark_id": "ckr6rysyg3jzs0y30533sccfw",
+      "source_symbol": "Li",
+      "code": "Li",
+      "label": "Labrale inferius",
+      "category": "soft_tissue",
+      "definition": "Most prominent lower vermilion border point.",
+      "dentalflow_v1_code": null
+    },
+    {
+      "output_index": 25,
+      "source_landmark_id": "ckr6rysyg3jzu0y308e25br5c",
+      "source_symbol": "Ls",
+      "code": "Ls",
+      "label": "Labrale superius",
+      "category": "soft_tissue",
+      "definition": "Most prominent upper vermilion border point.",
+      "dentalflow_v1_code": null
+    },
+    {
+      "output_index": 26,
+      "source_landmark_id": "ckr6rysyg3jzw0y30cnaufc5r",
+      "source_symbol": "N`",
+      "code": "N_prime",
+      "label": "Soft Tissue Nasion",
+      "category": "soft_tissue",
+      "definition": "Soft-tissue point overlying nasion.",
+      "dentalflow_v1_code": null
+    },
+    {
+      "output_index": 27,
+      "source_landmark_id": "ckr6rysyh3jzy0y30dqpoar9x",
+      "source_symbol": "Pog`",
+      "code": "Pog_prime",
+      "label": "Soft Tissue Pogonion",
+      "category": "soft_tissue",
+      "definition": "Soft-tissue point overlying pogonion.",
+      "dentalflow_v1_code": null
+    },
+    {
+      "output_index": 28,
+      "source_landmark_id": "ckr6rysyh3k000y302tpa6jn2",
+      "source_symbol": "Sn",
+      "code": "Sn",
+      "label": "Subnasale",
+      "category": "soft_tissue",
+      "definition": "Columella–upper-lip junction in the midline.",
+      "dentalflow_v1_code": null
+    }
+  ]
+}

@@ -2,6 +2,10 @@
 
 The software can load a supplied, verified ONNX artifact. No clinical weights have been downloaded or integrated. The normal development service still reports `MODEL_NOT_CONFIGURED`.
 
+Update 2026-09-15: [Aariz/HRNet-W32 review package](../research/aariz/README.md) prepares an all-29-landmark training proposal under the corrected 200-CCU Google AI Pro budget. The complete archive audit confirmed six exact cross-split duplicate pairs and a CSV-versus-paper spacing discrepancy. No exclusion mask, training run or production schema change has been applied; model readiness remains unchanged.
+
+Update 2026-09-20: [bounded HRNet-W32 pilot tooling](../research/aariz/pilot/README.md) is implemented with all 29 landmarks, no pretrained checkpoint and no full-training mode. It applies the training-only exclusion mask to a derived workspace when preparation is explicitly run. No real pilot has run; production model readiness is unchanged.
+
 ## Candidates examined
 
 | Candidate | Published evidence | Integration decision |

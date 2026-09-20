@@ -1,0 +1,94 @@
+{
+  "status": "PROPOSAL_ONLY_NOT_EXECUTABLE_TRAINING_APPROVAL",
+  "experiment_id": "aariz29-hrnet-w32-pilot-v1",
+  "schema": "landmarks-29.json",
+  "seed": 20260915,
+  "dataset": {
+    "doi": "10.6084/m9.figshare.27986417.v1",
+    "train_split": "train",
+    "validation_split": "valid",
+    "test_access": "sealed_until_model_selection_is_locked",
+    "target": "unrounded_mean_of_junior_and_senior_joined_by_landmark_id",
+    "training_exclusion_proposal": "proposed-training-exclusions.json",
+    "training_exclusion_status": "not_applied_requires_review",
+    "calibration": "per-image CSV pixel_size; ProMax 2D conflict remains flagged"
+  },
+  "architecture": {
+    "name": "HRNet-W32",
+    "source_repository": "https://github.com/leoxiaobin/deep-high-resolution-net.pytorch",
+    "source_commit": "6f69e4676ad8d43d0d61b64b1b9726f0c369e7b1",
+    "source_license": "MIT",
+    "stem": { "conv_layers": 2, "channels": 64, "kernel": 3, "stride_each": 2 },
+    "stage1": { "blocks": 4, "block": "BOTTLENECK", "base_channels": 64 },
+    "stage2": { "modules": 1, "branches": 2, "block": "BASIC", "blocks_per_branch": [4, 4], "channels": [32, 64], "fusion": "SUM" },
+    "stage3": { "modules": 4, "branches": 3, "block": "BASIC", "blocks_per_branch": [4, 4, 4], "channels": [32, 64, 128], "fusion": "SUM" },
+    "stage4": { "modules": 3, "branches": 4, "block": "BASIC", "blocks_per_branch": [4, 4, 4, 4], "channels": [32, 64, 128, 256], "fusion": "SUM" },
+    "head": { "kernel": 1, "channels": 29, "activation": "linear", "output": "raw_heatmaps_N29HW" },
+    "pretrained_checkpoint": null,
+    "initialization": "random; no pretrained artifact approved or downloaded",
+    "batch_norm": "upstream BatchNorm; statistics use microbatch 2, not accumulated batch 8"
+  },
+  "preprocessing": {
+    "input_width": 768,
+    "input_height": 768,
+    "channels": 3,
+    "color": "RGB",
+    "orientation": "EXIF-aware; no automatic reflection",
+    "resize": "letterbox-bilinear-v1",
+    "pad_value": 0,
+    "scale": "divide-by-255",
+    "mean": [0.5, 0.5, 0.5],
+    "std": [0.5, 0.5, 0.5],
+    "coordinate_policy": "normalized current API coordinates x/W,y/H; exact recorded affine and padding inverse"
+  },
+  "targets": {
+    "width": 192,
+    "height": 192,
+    "sigma_heatmap_pixels": 2.0,
+    "center": "fractional: transformed_x/4-0.5, transformed_y/4-0.5",
+    "loss": "equal-landmark masked Gaussian heatmap MSE; no rounding of target center",
+    "decoder": "argmax cell center, inverse letterbox; no quarter-pixel shift or test-time flip",
+    "confidence": "raw peak is not probability; validation-only calibration is a later separate selection step"
+  },
+  "training": {
+    "device": "one available Colab T4 or L4; record actual GPU and hourly CCU rate",
+    "microbatch": 2,
+    "gradient_accumulation": 4,
+    "effective_batch": 8,
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "gradient_clip_norm": 1.0,
+    "mixed_precision": "FP16 AMP on supported CUDA hardware; record overflow/scaler events",
+    "dataloader_workers": 2,
+    "pilot_lr_schedule": "constant",
+    "full_run_lr_schedule_proposal": "5-epoch linear warmup then cosine; schedule frozen before full-run approval",
+    "augmentation_train_only": {
+      "horizontal_flip": false,
+      "vertical_flip": false,
+      "half_body_crop": false,
+      "rotation_degrees": [-7, 7],
+      "scale": [0.9, 1.1],
+      "translation_fraction": [-0.02, 0.02],
+      "brightness_factor": [0.9, 1.1],
+      "contrast_factor": [0.9, 1.1],
+      "invalid_transformed_points": "mask target loss; log counts, never clamp into the image"
+    }
+  },
+  "pilot_limits": {
+    "prerequisites": "review duplicate-exclusion policy, calibration conflict, schema/config and authorize pilot implementation",
+    "max_epochs": 3,
+    "max_optimizer_steps": 250,
+    "max_gpu_session_minutes": 30,
+    "planned_ccu_ceiling": 10,
+    "stop_at": "earliest limit, nonfinite loss, repeated OOM or CCU budget concern",
+    "budget_enforcement": "wall-time bound derived from observed Colab hourly rate with 20 percent reserve; actual CCU balance recorded separately",
+    "automatic_full_run": false
+  },
+  "full_run_proposal": {
+    "max_epochs": 80,
+    "early_stopping_patience_epochs": 12,
+    "selection": "validation only, with predefined landmark/angle failure checks",
+    "requires": "completed audit, reviewed pilot time/CCU report and explicit user approval"
+  }
+}
